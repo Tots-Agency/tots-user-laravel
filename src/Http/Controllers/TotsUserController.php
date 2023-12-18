@@ -31,23 +31,19 @@ class TotsUserController extends \Illuminate\Routing\Controller
 
     public function show($id)
     {
-        // Create query
         $item = TotsUser::findOrFail($id);
-        // Execute query
         return response()->json(TotsUserResource::make($item));
     }
 
     public function update($id, TotsUserRequest $request)
     {
         $this->userRepository->updateByData($id, $request->validated());
-        // Execute query
         return response()->json(SuccessResource::make('User updated'));
     }
 
     public function delete($id)
     {
         $this->userRepository->removeById($id);
-        // Execute query
         return response()->json(SuccessResource::make('User deleted'));
     }
 }
