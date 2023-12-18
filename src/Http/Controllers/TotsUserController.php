@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Tots\User\Http\Controllers;
 
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
