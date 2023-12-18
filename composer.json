@@ -18,6 +18,13 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.0",
-        "laravel/framework": "^10.10"
-    }
+        "laravel/framework": "^10.10",
+        "tots/auth-laravel": "dev-main"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/tots-agency/tots-auth-laravel.git"
+        }
+    ]
 }
