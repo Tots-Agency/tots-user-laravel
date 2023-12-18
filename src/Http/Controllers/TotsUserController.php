@@ -6,6 +6,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Tots\Auth\Models\TotsUser;
 use Tots\Auth\Repositories\TotsUserRepository;
+use Tots\Core\Http\Resources\SuccessResource;
 use Tots\User\Http\Requests\TotsUserRequest;
 use Tots\User\Http\Resources\TotsUserResource;
 
@@ -40,6 +41,13 @@ class TotsUserController extends \Illuminate\Routing\Controller
     {
         $this->userRepository->updateByData($id, $request->validated());
         // Execute query
-        return response()->json(['message' => 'User updated']);
+        return response()->json(SuccessResource::make('User updated'));
+    }
+
+    public function delete($id)
+    {
+        $this->userRepository->removeById($id);
+        // Execute query
+        return response()->json(SuccessResource::make('User deleted'));
     }
 }
