@@ -29,6 +29,7 @@ class TotsUserRequest extends FormRequest
             'email' => ['required', 'email'],
             'photo' => ['string', 'nullable'],
             'phone' => ['string', 'max:50', 'nullable'],
+            'status' => ['nullable', 'integer'],
         ];
     }
 }
